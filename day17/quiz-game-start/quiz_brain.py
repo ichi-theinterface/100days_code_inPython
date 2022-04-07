@@ -1,18 +1,17 @@
-from question_model import Question
-from data import question_data
+from mimetypes import init
 
-print(question_data)
-print ("\n\n")
-print(question_data[0]) 
 
-# question_bank = [Question] 
-# for x in question_data:
+class QuizBrain:
 
-question_bank = []
-
-for question in question_data:
-    question_text = question["text"]
-    question_answer = question["answer"]
-    new_question = Question(question_text, question_answer)
-    question_bank.append(new_question)
-
+    def __init__(self, input):
+        self.question_number = 0 
+        self.question_list = input
+    
+    def next_nexquestion(self):
+        # test = self.question_list[self.question_number]
+        # print(test)
+        
+        current_question = self.question_list[self.question_number]
+        self.question_number =+ 1 
+        input(f"Q.{self.question_number} : {current_question.text} (True/False)?: ")
+ 
