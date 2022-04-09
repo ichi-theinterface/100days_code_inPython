@@ -22,4 +22,6 @@ for question in question_data:
 # print(question_bank[1].answer)
 
 quiz = QuizBrain(question_bank)
-quiz.next_nexquestion()
+
+while quiz.still_has_question():
+    quiz.next_nexquestion()
