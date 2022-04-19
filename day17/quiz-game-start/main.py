@@ -1,4 +1,5 @@
 from cgitb import text
+from re import A
 from question_model import Question
 from data import question_data
 from quiz_brain import QuizBrain
@@ -20,6 +21,7 @@ for question in question_data:
 # print(question_bank)
 # print(question_bank[2].text)
 # print(question_bank[1].answer)
-
 quiz = QuizBrain(question_bank)
-quiz.next_nexquestion()
+
+while quiz.still_has_question():
+    quiz.next_nexquestion()
